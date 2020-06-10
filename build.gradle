@@ -1,0 +1,41 @@
+allprojects {
+    group = 'me.nibo.corejava'
+    version = '0.0.1'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    compileJava {
+        options.encoding 'UTF-8'
+    }
+    sourceSets {
+        test.compileClasspath += configurations.compileOnly
+        test.runtimeClasspath += configurations.compileOnly
+    }
+
+    tasks.withType(Test) {
+        testLogging {
+            exceptionFormat 'full'
+            showStandardStreams true
+        }
+    }
+
+    idea {
+        module {
+            downloadSources = false
+            downloadJavadoc = false
+        }
+    }
+
+    eclipse {
+        classpath {
+            downloadSources = false
+        }
+    }
+}
