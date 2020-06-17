@@ -1,0 +1,9 @@
+@startuml
+skinparam defaultFontName "JetBrainsMono Nerd Font + "
+skinparam dpi 300
+/' skinparam handwritten true '/
+
+RushOrder --|> Order
+Order o-- Item
+Order ..> Account
+@enduml
