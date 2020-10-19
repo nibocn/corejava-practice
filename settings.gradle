@@ -1,2 +1,11 @@
+// 配置插件下载地址
+pluginManagement {
+    repositories {
+        maven { url ALIYUN_GRADLE_PLUGIN_URL }
+        gradlePluginPortal()
+        jcenter()
+    }
+}
+
 rootProject.name = 'corejava-practice'
 include ':v1ch03', ':v1ch04'

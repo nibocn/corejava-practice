@@ -26,6 +26,14 @@ subprojects {
         }
     }
 
+    repositories {
+        mavenLocal()
+        maven { url ALIYUN_MAVEN_REPO_URL }
+        mavenCentral()
+        jcenter()
+    }
+
+
     idea {
         module {
             downloadSources = false
